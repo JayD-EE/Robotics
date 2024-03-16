@@ -182,8 +182,6 @@ int main(void)
   	  float vt = 80;
 
   	  // Compute the control signal u
-//  	  float kp = 25.0;
-//  	  float ki = 5;
   	  float kp = 5;
   	  float ki = 10;
   	  float kd = 0;
@@ -192,9 +190,7 @@ int main(void)
   	  dedt = (e-eprev)/(deltaT);
 
   	  eintegral = eintegral + e*deltaT;
-
   	  u = kp*e + ki*eintegral + kd*dedt;
-
   	  eprev = e;  //update the error term
 
   	  // Set the motor speed and direction
