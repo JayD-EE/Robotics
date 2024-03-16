@@ -90,15 +90,11 @@ float deltaT=0;
 void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 {
 	counter = __HAL_TIM_GET_COUNTER(htim);
-
 	if(counter>=65535){counter_2++;}
-
 	count = (int16_t)counter;
 
 //	position = counter;
 	position = counter_2*65536+counter;
-
-
 }
 
 // for setting the pwm pins (pwmVal is in range 0 to 255)
